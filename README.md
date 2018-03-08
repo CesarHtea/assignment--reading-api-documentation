@@ -1,6 +1,6 @@
 # Reading API Documentation
 
-## The Assignment
+## Content
 
 Read the documentation provided in the links in order to answer the questions below
 
