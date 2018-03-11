@@ -42,18 +42,31 @@ request
 	.then(function(sunsetSurnise) {
 		// console.log(sunsetSurnise.body.results.sunset)
 		answerElement_apimashup_2.innerHTML = sunsetSurnise.body.results.sunset
+	 
 	})
 
 
 
 
 
-
 //========================================================================
-//  (3) What is the weekly weather forecast in Montreal? (look for summary property in 'daily')
-
+//  (3) What is the weekly weather forecast in Montreal? 
+// 	(look for summary property in 'daily')
+// - https://darksky.net/dev
+// - Note: You will have to create an account.
 const answerElement_apimashup_3 = document.getElementById('apimashup-3')
+// console.log(answerElement_apimashup_3)	
+const URL = 'https://api.darksky.net/forecast/cfd773572aa735ac141e85c7c2d10ece/45.5016889,-73.567256'
 
+answerElement_apimashup_3.innerHTML += "(Activar CorsE)<br>"
+
+request
+	.get (URL)
+	.then(function(weaklyWeather) {
+		// console.log(weaklyWeather.body.daily.summary)
+		// answerElement_apimashup_3.innerHTML += "(Activar CorsE)<br>"
+		answerElement_apimashup_3.innerHTML += weaklyWeather.body.daily.summary
+	})
 
 
 
